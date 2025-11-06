@@ -1,0 +1,1157 @@
+/* VARIÁVEIS DE COR E ESTILOS GLOBAIS */
+:root {
+    /* Cores Principais e de Ação */
+    --primary-color: #7706e1;
+    /* Define o roxo principal para títulos e botões primários */
+    --secondary-color: #00cc99;
+    /* Define o verde/ciano para acentuar detalhes e bordas */
+    --accent-color: #ff0077;
+    /* Define o rosa neon para destaques, preços e estrelas */
+    --dark-purple: #5f04b2;
+    /* Define um roxo mais escuro para texto de títulos */
+
+    /* Cores de Fundo e Texto */
+    --text-color: #333333;
+    /* Define a cor principal para a maioria dos textos */
+    --text-color-light: #666666;
+    /* Define a cor de texto secundária ou cinza, para legendas */
+    --background-main: #fcebff;
+    /* Define o fundo principal da página (lilás claro) */
+    --background-light: #fffceb;
+    /* Define o fundo secundário, usado em seções como "Sobre Nós" */
+    --background-white: #FFFFFF;
+    /* Define o fundo branco, usado em caixas e cabeçalho */
+    --background-form: #f5cbff;
+    /* Define a cor de fundo para opções de formulário selecionadas */
+    --background-form-accent: #e793f6;
+    /* Define a cor de borda para destaque de formulário */
+    --background-tag-light: #ffdee9;
+    /* Define um rosa claro para etiquetas ou banners */
+    --background-purple-light: #f8e5ff;
+    /* Define um roxo claro, usado como fundo para a seção de avaliações */
+    --error-color: #ff44ab;
+    /* Define a cor usada para criar o gradiente na imagem principal (Hero) */
+
+    /* Sombras e Bordas */
+    --shadow-base: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Define a sombra padrão para elementos como caixas e cabeçalho */
+    --shadow-hover: 0 8px 15px rgba(122, 0, 255, 0.2);
+    /* Define uma sombra maior ao passar o mouse */
+    --border-light: #EEEEEE;
+    /* Define a cor de borda clara */
+}
+
+/* --- RESET E ESTILOS BASE --- */
+* {
+    /* Reseta margens e preenchimento de todos os elementos */
+    margin: 0;
+    padding: 0;
+    /* Inclui preenchimento e borda na largura/altura total do elemento */
+    box-sizing: border-box;
+    /* Define a fonte padrão para o projeto */
+    font-family: 'Poppins', sans-serif;
+    /* Ativa a rolagem suave ao navegar por links âncora */
+    scroll-behavior: smooth;
+}
+
+body {
+    /* Aplica a cor de fundo principal e a cor padrão do texto */
+    background-color: var(--background-main);
+    color: var(--text-color);
+    /* Define o espaçamento entre linhas do texto */
+    line-height: 1.6;
+}
+
+a {
+    /* Remove o sublinhado padrão de todos os links */
+    text-decoration: none;
+    /* Aplica a cor padrão dos links */
+    color: var(--text-color);
+}
+
+img {
+    /* Garante que imagens não ultrapassem a largura do seu contêiner */
+    max-width: 100%;
+    /* Mantém a proporção da imagem */
+    height: auto;
+}
+
+section {
+    /* Aplica o preenchimento padrão para todas as seções (topo/fundo e laterais) */
+    padding: 80px 5%;
+}
+
+/* --- HEADER E NAVEGAÇÃO --- */
+.header {
+    /* Define cor de fundo, sombra e mantém o cabeçalho fixo no topo da tela */
+    background-color: var(--background-white);
+    box-shadow: var(--shadow-base);
+    position: sticky;
+    top: 0;
+    /* Garante que o cabeçalho fique sobre outros elementos */
+    z-index: 1000;
+}
+
+.header-container {
+    /* Usa Flexbox para alinhar logo e navegação, centralizando o conteúdo */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 0;
+}
+
+.logo img {
+    /* Define a altura do logo */
+    height: 80px;
+}
+
+.navbar a {
+    /* Define espaçamento, peso e cor dos links de navegação */
+    margin-left: 25px;
+    font-weight: 500;
+    font-size: 1rem;
+    color: var(--text-color);
+    /* Aplica transição suave para a cor no hover */
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    /* Altera a cor do link ao passar o mouse */
+    color: var(--primary-color);
+}
+
+.navbar-link {
+    /* Define a cor, tamanho e peso da fonte dos links de navegação */
+    color: var(--text-color);
+    font-size: 1.7rem;
+    font-weight: 500;
+    padding: 0.5rem 0;
+    /* Define posição para o pseudo-elemento da linha de destaque */
+    position: relative;
+}
+
+.navbar-link::after {
+    /* Cria uma linha (pseudo-elemento) abaixo do link */
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    /* Inicia com largura zero */
+    height: 0.2rem;
+    background-color: var(--secondary-color);
+    /* Aplica transição para a linha aparecer suavemente */
+    transition: width 0.3s;
+}
+
+.navbar-link:hover::after {
+    /* Expande a linha para 100% da largura ao passar o mouse */
+    width: 100%;
+}
+
+/* --- BOTÕES GLOBAIS --- */
+/* Botão Carrinho (Formato gradiente) */
+.btn-carrinho {
+    /* Aplica fundo com gradiente de roxo para rosa */
+    background-image: linear-gradient(to right, var(--primary-color), var(--accent-color));
+    color: var(--background-white);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+/* Efeito visual ao passar o mouse no botão carrinho */
+.btn-carrinho:hover {
+    background-color: #6f1ad8;
+    box-shadow: var(--shadow-base);
+}
+
+/* Botões de Ação Principal/Secundário */
+.btn-prin,
+.btn-secun {
+    /* Garante que se comportem como blocos de texto alinhados */
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 5px;
+    font-weight: 600;
+    text-align: center;
+    /* Aplica efeitos de transição para o hover */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-prin {
+    /* Aplica fundo com gradiente de roxo para rosa e texto branco */
+    background-image: linear-gradient(to right, var(--primary-color), var(--accent-color));
+    color: var(--background-white);
+}
+
+.btn-prin:hover {
+    /* Aplica efeito de leve elevação e mudança de cor ao passar o mouse */
+    background-color: #6f1ad8;
+    transform: translateY(-2px);
+}
+
+.btn-secun {
+    /* Define fundo transparente, borda e texto roxos */
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    margin-left: 15px;
+}
+
+.btn-secun:hover {
+    /* Inverte as cores (roxo sólido com texto branco) e eleva levemente */
+    background-color: var(--primary-color);
+    color: var(--background-white);
+    transform: translateY(-2px);
+}
+
+/* Botão de Finalizar Pedido */
+.btn-finalizar {
+    /* Define botão sólido roxo para a etapa final do pedido */
+    background-color: var(--primary-color);
+    color: var(--background-white);
+    border: none;
+    padding: 15px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn-finalizar:hover {
+    /* Escurece o roxo ao passar o mouse */
+    background-color: #6600E6;
+}
+
+/* --- SEÇÃO HOME --- */
+.home {
+    /* Usa Flexbox para alinhar conteúdo de texto e imagem lado a lado, e centraliza */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* Garante altura mínima para ocupar a tela visível (viewport) */
+    min-height: calc(100vh - 80px);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 0;
+}
+
+.home-content {
+    /* Define a largura máxima para o lado do texto */
+    max-width: 50%;
+}
+
+.home-content .tag {
+    /* Estilo para a etiqueta de destaque no topo do conteúdo */
+    background-color: #ffb2e8;
+    color: var(--accent-color);
+    padding: 5px 15px;
+    border-radius: 50px;
+    font-weight: 500;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.home-content h1 {
+    /* Estilo do título principal da página */
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.home-content .descricao {
+    /* Estilo para o parágrafo de descrição */
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+.home-btns {
+    /* Usa Flexbox para alinhar os botões de ação */
+    display: flex;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.status {
+    /* Usa Flexbox para alinhar os itens de status (ex: +100 Clientes) */
+    display: flex;
+    gap: 40px;
+}
+
+.status-item .numero {
+    /* Estilo para os números de destaque do status */
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.status-item .legenda {
+    /* Estilo para o texto explicativo do status */
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.home-img {
+    /* Contêiner da imagem principal */
+    max-width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-img {
+    /* Define o fundo com gradiente roxo/rosa para criar um "quadro" chamativo */
+    position: relative;
+    width: 100%;
+    max-width: 550px;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--error-color) 100%);
+    border-radius: 2rem;
+    padding: 15px;
+    box-shadow: 0 10px 20px rgba(122, 0, 255, 0.2);
+}
+
+.hero-img img {
+    /* Estilo para a imagem dentro do gradiente */
+    display: block;
+    width: 100%;
+    border-radius: 2rem;
+    /* Garante que a imagem cubra o espaço sem distorção */
+    object-fit: cover;
+}
+
+/* --- SEÇÃO SOBRE NÓS (ABOUT) --- */
+.about {
+    /* Usa Flexbox para alinhar texto e imagem lado a lado, e centraliza */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    /* Aplica cor de fundo e bordas arredondadas para a seção */
+    background-color: var(--background-light);
+    border-radius: 10px;
+    gap: 40px;
+    margin-top: 6rem;
+}
+
+.about-content {
+    /* Define a largura máxima para o lado do texto */
+    max-width: 50%;
+}
+
+.about-content h2 {
+    /* Título principal da seção */
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.about-content h3 {
+    /* Subtítulo da seção */
+    font-size: 1.8rem;
+    color: var(--text-color);
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.about-content p {
+    /* Estilo do parágrafo */
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.about-img {
+    /* Contêiner da imagem */
+    max-width: 45%;
+}
+
+.about-img img {
+    /* Aplica borda arredondada e sombra para a imagem */
+    border-radius: 10px;
+    box-shadow: var(--shadow-base);
+}
+
+/* --- SEÇÃO MONTE SEU AÇAÍ --- */
+.monte-acai-section {
+    /* Centraliza o conteúdo e define o fundo */
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    background-color: var(--background-light);
+}
+
+.monte-acai-title {
+    /* Título principal da seção */
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.monte-acai-subtitle {
+    /* Subtítulo/descrição */
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    color: var(--text-color-light);
+    text-align: center;
+}
+
+.monte-acai-container {
+    /* Usa Flexbox para dividir a imagem e o formulário lado a lado */
+    display: flex;
+    gap: 3rem;
+    align-items: flex-start;
+    text-align: left;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 3rem;
+    background-color: var(--background-white);
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.monte-acai-imagem {
+    /* Define o contêiner da imagem com posicionamento fixo para a rolagem */
+    flex: 1 1 60%;
+    position: sticky;
+    top: 100px;
+    padding: 20px 0;
+}
+
+.monte-acai-imagem img {
+    /* Aplica borda arredondada e sombra da imagem de pré-visualização do açaí */
+    border-radius: 10px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.monte-acai-form {
+    /* Contêiner do formulário */
+    flex: 0 0 50%;
+    background-color: var(--background-light);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: none;
+}
+
+.form-group {
+    /* Agrupa campos relacionados, com espaçamento e separador */
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.form-group:last-of-type {
+    /* Remove a borda do último grupo */
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.form-group h3 {
+    /* Título de cada etapa do formulário, com borda lateral para destaque */
+    font-size: 1.5rem;
+    color: var(--text-color);
+    margin-bottom: 20px;
+    border-left: 5px solid var(--secondary-color);
+    padding-left: 10px;
+}
+
+.opcoes-grid {
+    /* Organiza as opções em um layout de grade responsivo */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+    gap: 1rem;
+}
+
+.opcao-item {
+    /* Estilo base para cada opção */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    border: 2px solid #cf4aff;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    background-color: var(--background-main);
+    position: relative;
+}
+
+.opcao-item:hover {
+    /* Aplica efeito de hover, mudando a cor da borda */
+    border-color: var(--primary-color);
+    box-shadow: 0 0 10px rgba(122, 0, 255, 0.1);
+}
+
+.opcao-item input[type="radio"],
+.opcao-item input[type="checkbox"] {
+    /* Esconde os botões de rádio/checkbox nativos */
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* Estilo para a opção checada */
+.opcao-item input:checked+span,
+.opcao-item input:checked:not([type="checkbox"])+span+small+span {
+    /* Aumenta o peso da fonte e muda a cor ao selecionar */
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.opcao-item:has(input:checked) {
+    /* Muda o fundo da caixa da opção selecionada e adiciona um anel de destaque */
+    background-color: var(--background-form);
+    box-shadow: 0 0 0 0.3rem var(--background-form-accent);
+}
+
+.opcao-item span {
+    /* Estilo padrão do texto da opção */
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.tamanhos-grid {
+    /* Configuração de grade específica para 3 colunas na escolha de tamanho */
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.tamanhos-grid .opcao-item {
+    padding: 12px 8px;
+}
+
+.tamanhos-grid .opcao-item span:first-of-type {
+    /* Estilo do nome do tamanho */
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+
+.tamanhos-grid .opcao-item small {
+    /* Estilo do volume/tamanho em ml */
+    display: block;
+    color: var(--text-color-light);
+    margin: 5px 0;
+    font-size: 1rem;
+}
+
+.tamanhos-grid .opcao-item span:last-child {
+    /* Estilo e cor de destaque para o preço do tamanho */
+    font-weight: 600;
+    color: var(--accent-color);
+    font-size: 1.2rem;
+}
+
+.adicional-item {
+    /* Organiza nome e preço dos adicionais lado a lado */
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 15px;
+    min-height: auto;
+}
+
+.adicional-item span {
+    /* Estilo do nome do adicional */
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.adicional-preco {
+    /* Cor e peso da fonte para o preço do adicional */
+    color: var(--accent-color);
+    font-weight: 600 !important;
+}
+
+.finalizar-pedido-box {
+    /* Contêiner de resumo do preço e botão de finalização */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    /* Aplica linha tracejada separadora */
+    border-top: 1px dashed #ccc;
+}
+
+.preco-total {
+    /* Estilo do texto "Preço Total" */
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+#valor-total {
+    /* Estilo do valor numérico do preço total, em destaque */
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    display: block;
+    line-height: 1.1;
+}
+
+/* --- SEÇÃO AVALIAÇÕES (REVIEW) --- */
+.review .title {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.review .subtitle {
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--text-color-light);
+    margin-bottom: 4rem;
+}
+
+.review h3 {
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--text-color-light);
+}
+
+.review-container {
+    display: flex;
+    justify-content: center;
+}
+
+
+.review-box {
+    background-color: var(--background-white);
+    padding: 2rem;
+    border-radius: 1.5rem;
+    box-shadow: var(--shadow-base);
+    max-width: 30rem;
+    text-align: center;
+    position: relative;
+}
+
+.review .box-quote {
+    width: 5rem;
+    margin-bottom: 2rem;
+}
+
+.review-box p {
+    font-style: italic;
+
+}
+
+.client-photo {
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 1.5rem auto;
+    border: 0.2rem solid var(--primary-color);
+}
+
+.name-client {
+    font-size: 0.5rem;
+    color: var(--color-primary);
+}
+
+.review .stars {
+    color: gold;
+    font-size: 2.2rem;
+}
+
+/* --- SEÇÃO CONTATO (CONTACT) --- */
+
+.contact {
+    /* Centraliza a seção e define a largura máxima */
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact h2 {
+    /* Título principal da seção */
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.contact-grid {
+    /* Usa Flexbox para dividir informações de contato e formulário */
+    display: flex;
+    gap: 40px;
+    margin-top: 40px;
+    text-align: left;
+}
+
+.contact-info,
+.contact-form {
+    /* Define que os dois elementos (info e form) ocupem o mesmo espaço */
+    flex: 1;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.contact-info {
+    /* Fundo da coluna de informações */
+    background-color: var(--background-light);
+}
+
+.contact-form {
+    /* Fundo e sombra da coluna do formulário */
+    background-color: var(--background-white);
+    box-shadow: var(--shadow-base);
+}
+
+.contact-info h3 {
+    /* Títulos de categorias de informação (ex: Endereço, Telefone) */
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    margin-bottom: 5px;
+    /* Borda verde/ciano para destaque */
+    border-bottom: 2px solid var(--secondary-color);
+    display: inline-block;
+    padding-bottom: 2px;
+    margin-top: 20px;
+}
+
+.contact-info h3:first-child {
+    /* Remove a margem superior do primeiro título */
+    margin-top: 0;
+}
+
+.contact-info p {
+    /* Estilo do parágrafo de informação */
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.form-text {
+    /* Texto de descrição do formulário */
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: var(--text-color-light);
+}
+
+.contact-form form input,
+.contact-form form textarea {
+    /* Estilo base para campos de entrada e área de texto */
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.contact-form form textarea {
+    /* Permite redimensionamento vertical e define altura mínima */
+    resize: vertical;
+    min-height: 150px;
+}
+
+.contact-form .btn-prin {
+    /* Faz o botão principal de envio ocupar toda a largura */
+    width: 100%;
+    border: none;
+    cursor: pointer;
+}
+
+.social-media {
+    /* Contêiner das mídias sociais, com separador superior */
+    margin-top: 60px;
+    padding-top: 30px;
+    border-top: 1px solid #eee;
+}
+
+.social-media h3 {
+    /* Título das mídias sociais */
+    font-size: 1.5rem;
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.social-media p {
+    /* Descrição das mídias sociais */
+    margin-bottom: 20px;
+}
+
+.social-media a {
+    /* Estilo dos links de ícones sociais */
+    margin: 0 10px;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.social-media a:hover {
+    /* Aplica efeito de zoom suave ao passar o mouse nos ícones */
+    transform: scale(1.1);
+}
+
+/* --- SEÇÃO CARDÁPIO (MENU) --- */
+
+.menu {
+    padding: 1.5rem 8%;
+    background-color: var(--background-purple-light);
+    border-radius: 0;
+    box-shadow: none;
+    max-width: 100%;
+}
+
+.menu .menu-header {
+    text-align: center;
+    padding: 0 0 4rem;
+}
+
+.menu .menu-header h1 {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.menu .menu-header .tag-menu {
+    background-color: #ffb2e8;
+    padding: 0.5rem 1.8rem;
+    color: var(--accent-color);
+    border-radius: 3rem;
+    margin-bottom: 1rem;
+    display: inline-block;
+    font-weight: 600;
+}
+
+.menu .menu-header p {
+    font-size: 1.2rem;
+    color: var(--text-color-light);
+}
+
+.lista-menu {
+    max-width: 120rem;
+}
+
+.titulo-menu h2 {
+    font-size: 2rem;
+    margin: 5rem 0 2rem;
+    color: var(--text-color);
+    text-align: left;
+    padding-left: 1rem;
+    border-left: 0.5rem solid var(--secondary-color);
+    display: inline-block
+}
+
+.produtos-grid {
+    display: grid;
+    /* Define 3 colunas de largura igual */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4rem;
+}
+
+.box {
+    background-color: var(--background-white);
+    border-radius: 1.5rem;
+    box-shadow: var(--shadow-base);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.box:hover {
+    /* Aplica efeito de elevação e sombra ao passar o mouse */
+    transform: translateY(-0.8rem);
+    box-shadow: var(--shadow-hover);
+}
+
+.box img {
+    width: 100%;
+    height: auto;
+    /* Garante que a imagem cubra o espaço */
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease-in-out;
+}
+
+.box:hover img {
+    /* Aplica leve zoom na imagem ao passar o mouse */
+    transform: scale(1.05);
+}
+
+.box .content-box {
+    padding: 1rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.box h3 {
+    /* Estilo do título do produto (Acai Clássico, etc.) */
+    font-size: 1.2rem;
+    margin: 0.5rem 0 0.3rem;
+    text-align: left;
+    color: var(--primary-color);
+}
+
+.box .nome-produto {
+    /* Estilo da descrição do produto */
+    font-size: 1.1rem;
+    margin: 0 0 1rem;
+    color: var(--text-color-light);
+    text-align: left;
+}
+
+.box .rodape-produto {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    border-top: 0.1rem solid var(--border-light);
+    margin-top: auto
+}
+
+.box .preço {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.btn-add {
+    /* Estilo do botão Adicionar */
+    padding: 0.7rem 1.4rem;
+    border-radius: 0.6rem;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    /* Aplica o estilo de botão com gradiente */
+    background-image: linear-gradient(to right, var(--primary-color), var(--accent-color));
+    color: var(--background-white);
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+/* --- FOOTER --- */
+
+.footer {
+    /* Define o fundo com gradiente colorido e texto branco */
+    background-image: linear-gradient(to right, var(--primary-color), var(--background-form-accent), var(--accent-color));
+    color: var(--background-white);
+    padding: 30px 5%;
+}
+
+.footer-container {
+    /* Contêiner centralizado e com itens alinhados ao centro */
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.footer-navbar a {
+    /* Estilo dos links de navegação no rodapé */
+    color: var(--background-white);
+    margin: 0 15px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.footer-navbar a:hover {
+    /* Cor de destaque ao passar o mouse */
+    color: var(--secondary-color);
+}
+
+.marca {
+    /* Estilo do texto de direitos autorais/marca */
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* --- RESPONSIVIDADE (MEDIA QUERIES) --- */
+
+/* --- TABLET E LAPTOPS MENORES (MAX-WIDTH: 992px) --- */
+@media (max-width: 992px) {
+
+    /* AJUSTES GERAIS */
+
+    /* Ajusta o padding geral para telas menores */
+    section {
+        padding: 60px 4%;
+    }
+
+    /* Reduz o tamanho da fonte do título principal */
+    .home-content h1 {
+        font-size: 3rem;
+    }
+
+    /* Reduz o espaçamento dos links de navegação */
+    .navbar a {
+        margin-left: 18px;
+    }
+
+    /* SEÇÃO HOME */
+    .home {
+        /* Altera para layout de coluna única para empilhar conteúdo e imagem */
+        flex-direction: column;
+        text-align: center;
+        min-height: auto;
+        padding-top: 30px;
+    }
+
+    .home-content,
+    .home-img {
+        /* Faz o texto e a imagem ocuparem a largura total */
+        max-width: 100%;
+        margin-bottom: 40px;
+    }
+
+    .home-btns {
+        /* Centraliza os botões */
+        justify-content: center;
+    }
+
+    /* SEÇÃO SOBRE NÓS (ABOUT) */
+    .about {
+        /* Altera para layout de coluna única */
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-content,
+    .about-img {
+        /* Ocupam a largura total e centralizam o conteúdo */
+        max-width: 100%;
+    }
+
+    .about-content h2,
+    .about-content h3 {
+        /* Alinha o texto ao centro */
+        text-align: center;
+    }
+
+    /* SEÇÃO CARDÁPIO (MENU) */
+    .produtos-grid {
+        /* Reduz para 2 colunas em telas de tablet */
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem;
+    }
+
+    /* SEÇÃO MONTE SEU AÇAÍ */
+    .monte-acai-container {
+        /* Altera para layout de coluna única para formulário e imagem */
+        flex-direction: column;
+        padding: 1.5rem;
+    }
+
+    .monte-acai-imagem {
+        /* Remove o posicionamento fixo da imagem em telas menores */
+        position: static;
+        padding: 0;
+    }
+
+    .monte-acai-form {
+        /* Ocupa a largura total */
+        flex: 1 1 100%;
+        padding: 20px;
+    }
+
+    /* SEÇÃO CONTATO (CONTACT) */
+    .contact-grid {
+        /* Altera para layout de coluna única para o formulário e informações */
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+/* --- CELULARES (MAX-WIDTH: 600px) --- */
+@media (max-width: 600px) {
+
+    /* AJUSTES GERAIS E FONTES */
+
+    /* Reduz o padding lateral */
+    section {
+        padding: 40px 15px;
+    }
+
+    /* Ajusta os títulos principais para telas de celular */
+    .home-content h1,
+    .monte-acai-title,
+    .review .title {
+        font-size: 2.2rem;
+    }
+
+    /* Esconde a barra de navegação principal */
+    .navbar {
+        display: none;
+    }
+
+    /* SEÇÃO HOME */
+    .status {
+        /* Empilha os itens de status em telas pequenas */
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    /* SEÇÃO CARDÁPIO (MENU) */
+    .produtos-grid {
+        /* Força para 1 coluna em telas de celular */
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .box h3 {
+        font-size: 1.1rem;
+    }
+
+    .box .nome-produto {
+        font-size: 1rem;
+    }
+
+    .box .preço {
+        font-size: 1.4rem;
+    }
+
+    .btn-add {
+        /* Reduz o botão de adicionar para caber melhor */
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+    }
+
+    /* SEÇÃO MONTE SEU AÇAÍ */
+    .opcoes-grid {
+        /* Ajusta as colunas da grade para telas menores */
+        grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    }
+
+    .tamanhos-grid {
+        /* Mantém 3 colunas para tamanhos, mas reduz o espaçamento */
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.5rem;
+    }
+
+    /* SEÇÃO CONTATO (CONTACT) */
+    .contact-info {
+        /* Remove a sombra para contraste em dispositivos móveis */
+        box-shadow: none;
+    }
+
+    /* FOOTER */
+    .footer-navbar {
+        /* Empilha os links do rodapé em telas estreitas */
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+}

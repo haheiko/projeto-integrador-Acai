@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Inicial | Açaí D'Mimi </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- link da fonte de texto do site-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header"> <!-- Cabeçalho -->
+        <div class="header-container">
+            <a href="#" class="logo">
+                <img src="img/Logo.png" alt="logo Açaí D'Mimi">
+            </a>
+
+            <nav class="navbar"> <!-- Barra De Navegação -->
+                <a href="#" class="navbar-link">Início</a>
+                <a href="menu.html" class="navbar-link">Cardápio</a>
+                <a href="#monte-acai" class="navbar-link">monte seu açaí</a>
+                <a href="#about" class="navbar-link">Sobre Nós</a>
+                <a href="#contact" class="navbar-link">Contato</a>
+            </nav>
+
+            <button class="btn-carrinho">
+                🛒 Carrinho
+            </button>
+        </div>
+    </header>
+
+    <main> <!-- Conteudo principal -->
+        <section class="home" id="home">
+            <div class="home-content">
+                <span class="tag"> ✨ Sabor e qualidade!</span>
+                <h1>Melhor Açaí do País</h1>
+                <p class="descricao">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam, asperiores eaque
+                    animi sed minima voluptatem
+                    tenetur consequuntur esse ad quos et, repellendus quibusdam quae magni aliquam magnam soluta
+                    deleniti nisi?
+                </p>
+                <div class="home-btns">
+                    <a href="menu.html" class="btn-prin">Ver Cardápio</a>
+                    <a href="https://wa.me/5599999999999?text=Olá,%20gostaria%20de%20ver%20o%20cardápio%20e%20fazer%20um%20pedido."
+                        class="btn-secun">Peça Agora</a>
+                </div>
+
+                <div class="status">
+                    <div class="status-item">
+                        <p class="numero">100%</p>
+                        <p class="legenda">Natural</p>
+                    </div>
+                    <div class="status-item">
+                        <p class="numero">5&#x2605;</p>
+                        <p class="legenda">Avaliações</p>
+                    </div>
+                </div>
+            </div>
+            <div class="home-img">
+                <div class="hero-img">
+                    <img src="img/acai-hero.png" alt="Taça de Açaí">
+                </div>
+            </div>
+        </section>
+
+        <section class="about" id="about"> <!-- Seção sobre nos -->
+            <div class="about-content">
+                <h2>Nossa História</h2>
+                <h3>Apaixonados por Sorvetes e Açaí</h3>
+                <p>No Açaí D'Mimi, nossa missão é proporcionar momentos de alegria e sabor através dos nossos
+                    sorvetes e açaí de alta qualidade. Utilizamos ingredientes frescos e selecionados para criar
+                    combinações irresistíveis que agradam a todos os paladares.
+                </p>
+                <p>Venha nos visitar e descubra por que somos o destino favorito para os amantes de sorvete e açaí na
+                    região!</p>
+            </div>
+
+            <div class="about-img">
+                <img src="img/sobre-nos.png" alt="Pessoas comendo Açaí">
+            </div>
+        </section>
+
+        <section class="monte-acai" id="monte-acai"> <!-- Seção monte seu açai -->
+            <h2 class="monte-acai-title">Monte seu Açaí</h2>
+            <p class="monte-acai-subtitle">Escolha o tamanho, base e coberturas favoritas para criar a combinação
+                perfeita.</p>
+
+            <div class="monte-acai-container">
+                <div class="monte-acai-imagem">
+                    <img src="img/2.png" alt="Açaí Personalizado com Morango e Granola">
+                </div>
+                <form class="monte-acai-form">
+
+                    <div class="form-group">
+                        <h3>Escolha o Formato</h3>
+                        <div class="opcoes-grid">
+                            <label class="opcao-item">
+                                <input type="radio" name="formato" value="copo" checked>
+                                <span>Copo</span>
+                            </label>
+                            <label class="opcao-item">
+                                <input type="radio" name="formato" value="tigela">
+                                <span>Tigela</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <h3>Escolha o Tamanho</h3>
+                        <div class="opcoes-grid tamanhos-grid">
+                            <label class="opcao-item">
+                                <input type="radio" name="tamanho" value="pequeno" data-price="15.00" checked>
+                                <span>Pequeno</span>
+                                <small>300ml</small>
+                                <span>R$ 15,00</span>
+                            </label>
+                            <label class="opcao-item">
+                                <input type="radio" name="tamanho" value="medio" data-price="22.00">
+                                <span>Médio</span>
+                                <small>500ml</small>
+                                <span>R$ 22,00</span>
+                            </label>
+                            <label class="opcao-item">
+                                <input type="radio" name="tamanho" value="grande" data-price="28.00">
+                                <span>Grande</span>
+                                <small>700ml</small>
+                                <span>R$ 28,00</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <h3>Escolha os Adicionais</h3>
+                        <div class="opcoes-grid adicionais-grid">
+                            <label class="opcao-item adicional-item">
+                                <input type="checkbox" name="adicional" value="morango" data-price="2.00">
+                                <span>Morango</span>
+                                <span class="adicional-preco">+R$ 2,00</span>
+                            </label>
+                            <label class="opcao-item adicional-item">
+                                <input type="checkbox" name="adicional" value="kiwi" data-price="2.00">
+                                <span>Kiwi</span>
+                                <span class="adicional-preco">+R$ 2,00</span>
+                            </label>
+                            <label class="opcao-item adicional-item">
+                                <input type="checkbox" name="adicional" value="banana" data-price="2.00">
+                                <span>Banana</span>
+                                <span class="adicional-preco">+R$ 2,00</span>
+                            </label>
+                            <label class="opcao-item adicional-item">
+                                <input type="checkbox" name="adicional" value="abacaxi" data-price="2.00">
+                                <span>Abacaxi</span>
+                                <span class="adicional-preco">+R$ 2,00</span>
+                            </label>
+                            <label class="opcao-item adicional-item">
+                                <input type="checkbox" name="adicional" value="amendoim" data-price="2.00">
+                                <span>Amendoim</span>
+                                <span class="adicional-preco">+R$ 2,00</span>
+                            </label>
+                            <label class="opcao-item adicional-item">
+                                <input type="checkbox" name="adicional" value="paçoca" data-price="2.00">
+                                <span>Paçoca</span>
+                                <span class="adicional-preco">+R$ 2,00</span>
+                            </label>
+                            <label class="opcao-item adicional-item">
+                                <input type="checkbox" name="adicional" value="leite-po" data-price="2.00">
+                                <span>Leite em Pó</span>
+                                <span class="adicional-preco">+R$ 2,00</span>
+                            </label>
+                            <label class="opcao-item adicional-item">
+                                <input type="checkbox" name="adicional" value="leite-condensado" data-price="2.00">
+                                <span>Leite Condensado</span>
+                                <span class="adicional-preco">+R$ 2,00</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="finalizar-pedido-box">
+                        <button type="button" class="btn-prin btn-finalizar">Finalizar Pedido</button>
+                        <span class="preco-total">Preço Total <span id="valor-total">R$ 17,00</span></span>
+                    </div>
+
+                </form>
+            </div>
+        </section>
+
+        <section class="review" id="review"> <!-- Seção avaliaçao -->
+            <h2 class="title">Nossos Clientes</h2>
+            <h3 class="subtitle">Conheça a experiência de quem já provou nossos produtos</h3>
+
+            <div class="review-container">
+                <div class="review-box">
+                    <img width="48" height="48" src="https://img.icons8.com/fluency/48/quote-right.png" alt="quote-right"/>
+                    <p>"O açaí é maravilhoso! Sempre peço o premium com frutas vermelhas. Entrega rápida e produto de qualidade. Virei cliente fiel!"</p>
+                    <img src="https://img.icons8.com/plasticine/100/happy--v1.png" alt="happy--v1" alt="foto-cliente" class="client-photo">
+                    <h3 class="name-client">Rafael Lange</h3>
+                    <div class="stars">
+                        &#x2605;&#x2605;&#x2605;&#x2605;&#x2605;
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+
+        <section class="contact" id="contact"> <!-- Seção contatos -->
+            <h2>Fale Conosco</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Endereço</h3>
+                    <p>Rua das Palmeiras, 1234 - Bairro Amazônia</p>
+                    <p>CEP: 99999-000, Cidade Belo Horizonte- MG</p>
+
+                    <h3>Telefone</h3>
+                    <p>WhatsApp: <a href="https://wa.me/5599999999999" target="_blank">(31) 99999-9999</a></p>
+                    <p>Telefone: <a href="tel:+5599999999999">(31) 99999-9999</a></p>
+
+                    <h3>Horário de Atendimento</h3>
+                    <p>Segunda a Sexta: 10:00 - 22:00</p>
+                    <p>Sábados: 11:00 - 23:00</p>
+                    <p>Domingos/Feriados: 14:00 - 20:00</p>
+                </div>
+
+                <div class="contact-form">
+                    <p class="form-text">Tem alguma dúvida ou quer fazer um pedido especial? Entre em contato conosco!
+                    </p>
+
+                    <form action="#">
+                        <input type="text" placeholder="Seu Nome" required>
+                        <input type="email" placeholder="Seu Email" required>
+                        <textarea placeholder="Sua Mensagem" required></textarea>
+                        <button type="submit" class="btn-prin">Enviar Mensagem</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="social-media">
+                <h3>Redes Sociais</h3>
+                <p>Siga-nos nas redes sociais para ficar por dentro das novidades e promoções!</p>
+
+                <a href="https://www.instagram.com/" target="_blank"><img
+                        src="https://img.icons8.com/?size=100&id=48839&format=png&color=000000" alt="Instagram"
+                        width="40" height="40"></a>
+                <a href="https://www.facebook.com/" target="_blank"><img
+                        src="https://img.icons8.com/?size=100&id=NjzF5Q_9qBqH&format=png&color=000000" alt="Facebook"
+                        width="40" height="40"></a>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="footer"> <!-- Seção rodape -->
+        <div class="footer-container">
+            <nav class="footer-navbar">
+                <a href="#home">Início</a>
+                <a href="menu.html">Produtos</a>
+                <a href="#about">Sobre Nós</a>
+                <a href="#contact">Contato</a>
+            </nav>
+            <p class="marca">© 2025 Açaí D'Mimi. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+
+
+</html>
